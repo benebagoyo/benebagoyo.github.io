@@ -1,0 +1,52 @@
+---
+title: "FICO HELOC: explainable credit scoring"
+subtitle: "Logistic regression for home equity credit lines · Python, SPSS · 2025"
+---
+
+## Question
+
+Can a bank predict default on a home equity line of credit (HELOC) accurately *and* explain each decision? Under Basel III and the EU AI Act, credit decisions must be transparent, which rules out black-box models whose output can't be explained to a customer or a regulator.
+
+## Data
+
+- **Dataset:** FICO HELOC, 9,871 applications reduced to 9,682 after cleaning, with 24 candidate variables.
+- **Target:** `RiskPerformance`, coded 1 = bad (default) and 0 = good. The two classes are close to balanced, with about 52% bad.
+- **Split:** 70% train (6,777) and 30% test (2,905).
+
+## Method
+
+1. **Variable screening:** t-tests for numeric variables and chi-square tests for categorical ones, keeping only variables that separate payers from defaulters (p < 0.05).
+2. **Model:** logistic regression estimated by maximum likelihood with three predictors, checked against the same model in SPSS.
+3. **Stability:** bootstrap 95% confidence intervals for every coefficient and odds ratio.
+4. **Validation:** confusion matrix and ROC curve on the test set, plus the Hosmer–Lemeshow calibration test.
+
+## Results
+
+::: {.kpi}
+<div><b>0.80</b><span>AUC on the test set</span></div>
+<div><b>73%</b><span>test accuracy (2,118 / 2,905)</span></div>
+<div><b>74%</b><span>defaulters correctly flagged (1,113 / 1,496)</span></div>
+:::
+
+| Predictor | Odds ratio | Reading |
+|---|---|---|
+| ExternalRiskEstimate (external credit score) | 0.908 | Each extra point lowers the odds of default by about 9% |
+| NumSatisfactoryTrades (accounts in good standing) | 0.973 | Each extra account in good standing lowers the odds by about 3% |
+| NetFractionRevolvingBurden (% of card limit used) | 1.008 | Each extra percentage point of card usage raises the odds by about 0.8% |
+
+All three are significant (p < 0.001), and none of the bootstrap 95% intervals crosses 1.
+
+**Calibration:** in SPSS the Hosmer–Lemeshow test gives p = 0.115, so there's no evidence of miscalibration. The Python version with a different grouping gives p = 0.013, which suggests calibration is borderline and worth checking before the model is used.
+
+**Business example:** an applicant with an external score of 85, 10% card usage and 30 accounts in good standing gets a predicted default probability of 0.12.
+
+## Limitations
+
+- With three predictors the model trades some accuracy for interpretability. A gradient-boosted model would probably score higher but couldn't be explained as directly.
+- The 0.5 cut-off treats a missed defaulter the same as a false alarm. A bank would set the threshold according to its own cost of each error.
+
+## Slides (Spanish)
+
+[Download the PowerPoint](files/heloc-slides-es.pptx) · [Open the PDF in a new tab](files/heloc-slides-es.pdf){target="_blank"}
+
+<iframe class="embed" src="files/heloc-slides-es.pdf" title="FICO HELOC slides"></iframe>

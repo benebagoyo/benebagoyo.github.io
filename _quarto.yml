@@ -1,0 +1,30 @@
+project:                                  # project-level settings
+  type: website                           # build a multi-page website, not a single document
+  output-dir: docs                        # render into /docs so GitHub Pages can serve it from that folder
+  resources:                              # extra files copied as-is into the rendered site
+    - files/                              # original Spanish report and slides for embedding/download
+
+website:                                  # website-wide settings
+  title: "Benedict Bagoyo"                # name shown at the top-left of every page
+  description: "Applied Statistics portfolio: credit risk and financial analysis projects"  # text used by search engines and link previews
+  page-navigation: true                   # previous/next links at the bottom of pages
+  navbar:                                 # top navigation bar = the tabs
+    left:                                 # tabs aligned to the left
+      - href: index.qmd                   # Home tab source file
+        text: Home                        # Home tab label
+      - href: intel-amd.qmd               # Intel vs AMD tab source file
+        text: "Intel vs AMD"              # Intel vs AMD tab label
+      - href: heloc.qmd                   # HELOC tab source file
+        text: "FICO HELOC"                # HELOC tab label
+    right:                                # icons aligned to the right
+      - icon: linkedin                    # LinkedIn icon
+        href: https://www.linkedin.com/in/benebagoyo  # link to your LinkedIn profile
+  page-footer:                            # footer on every page
+    center: "© 2026 Benedict Bagoyo · Built with Quarto"  # footer text
+
+format:                                   # output format settings
+  html:                                   # HTML output
+    theme: cosmo                          # clean Bootstrap theme as the base
+    css: styles.css                       # custom colours on top of the theme
+    toc: true                             # table of contents on each page
+    toc-location: right                   # put the table of contents on the right side

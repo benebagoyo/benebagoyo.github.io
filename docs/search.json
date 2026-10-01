@@ -1,0 +1,114 @@
+[
+  {
+    "objectID": "heloc.html",
+    "href": "heloc.html",
+    "title": "FICO HELOC: explainable credit scoring",
+    "section": "",
+    "text": "Can a bank predict default on a home equity line of credit (HELOC) accurately and explain each decision? Under Basel III and the EU AI Act, credit decisions must be transparent, which rules out black-box models whose output can’t be explained to a customer or a regulator."
+  },
+  {
+    "objectID": "heloc.html#question",
+    "href": "heloc.html#question",
+    "title": "FICO HELOC: explainable credit scoring",
+    "section": "",
+    "text": "Can a bank predict default on a home equity line of credit (HELOC) accurately and explain each decision? Under Basel III and the EU AI Act, credit decisions must be transparent, which rules out black-box models whose output can’t be explained to a customer or a regulator."
+  },
+  {
+    "objectID": "heloc.html#data",
+    "href": "heloc.html#data",
+    "title": "FICO HELOC: explainable credit scoring",
+    "section": "Data",
+    "text": "Data\n\nDataset: FICO HELOC, 9,871 applications reduced to 9,682 after cleaning, with 24 candidate variables.\nTarget: RiskPerformance, coded 1 = bad (default) and 0 = good. The two classes are close to balanced, with about 52% bad.\nSplit: 70% train (6,777) and 30% test (2,905)."
+  },
+  {
+    "objectID": "heloc.html#method",
+    "href": "heloc.html#method",
+    "title": "FICO HELOC: explainable credit scoring",
+    "section": "Method",
+    "text": "Method\n\nVariable screening: t-tests for numeric variables and chi-square tests for categorical ones, keeping only variables that separate payers from defaulters (p &lt; 0.05).\nModel: logistic regression estimated by maximum likelihood with three predictors, checked against the same model in SPSS.\nStability: bootstrap 95% confidence intervals for every coefficient and odds ratio.\nValidation: confusion matrix and ROC curve on the test set, plus the Hosmer–Lemeshow calibration test."
+  },
+  {
+    "objectID": "heloc.html#results",
+    "href": "heloc.html#results",
+    "title": "FICO HELOC: explainable credit scoring",
+    "section": "Results",
+    "text": "Results\n\n\n0.80AUC on the test set\n\n\n73%test accuracy (2,118 / 2,905)\n\n\n74%defaulters correctly flagged (1,113 / 1,496)\n\n\n\n\n\n\n\n\n\n\nPredictor\nOdds ratio\nReading\n\n\n\n\nExternalRiskEstimate (external credit score)\n0.908\nEach extra point lowers the odds of default by about 9%\n\n\nNumSatisfactoryTrades (accounts in good standing)\n0.973\nEach extra account in good standing lowers the odds by about 3%\n\n\nNetFractionRevolvingBurden (% of card limit used)\n1.008\nEach extra percentage point of card usage raises the odds by about 0.8%\n\n\n\nAll three are significant (p &lt; 0.001), and none of the bootstrap 95% intervals crosses 1.\nCalibration: in SPSS the Hosmer–Lemeshow test gives p = 0.115, so there’s no evidence of miscalibration. The Python version with a different grouping gives p = 0.013, which suggests calibration is borderline and worth checking before the model is used.\nBusiness example: an applicant with an external score of 85, 10% card usage and 30 accounts in good standing gets a predicted default probability of 0.12."
+  },
+  {
+    "objectID": "heloc.html#limitations",
+    "href": "heloc.html#limitations",
+    "title": "FICO HELOC: explainable credit scoring",
+    "section": "Limitations",
+    "text": "Limitations\n\nWith three predictors the model trades some accuracy for interpretability. A gradient-boosted model would probably score higher but couldn’t be explained as directly.\nThe 0.5 cut-off treats a missed defaulter the same as a false alarm. A bank would set the threshold according to its own cost of each error."
+  },
+  {
+    "objectID": "heloc.html#slides-spanish",
+    "href": "heloc.html#slides-spanish",
+    "title": "FICO HELOC: explainable credit scoring",
+    "section": "Slides (Spanish)",
+    "text": "Slides (Spanish)\nDownload the PowerPoint · Open the PDF in a new tab"
+  },
+  {
+    "objectID": "intel-amd.html",
+    "href": "intel-amd.html",
+    "title": "Intel vs AMD: financial health 2022–2025",
+    "section": "",
+    "text": "Which of the two companies is the riskier credit, and is Intel’s apparent 2025 improvement real? This is an analysis of financial health from the accounting statements, not an investment recommendation."
+  },
+  {
+    "objectID": "intel-amd.html#question",
+    "href": "intel-amd.html#question",
+    "title": "Intel vs AMD: financial health 2022–2025",
+    "section": "",
+    "text": "Which of the two companies is the riskier credit, and is Intel’s apparent 2025 improvement real? This is an analysis of financial health from the accounting statements, not an investment recommendation."
+  },
+  {
+    "objectID": "intel-amd.html#data-and-method",
+    "href": "intel-amd.html#data-and-method",
+    "title": "Intel vs AMD: financial health 2022–2025",
+    "section": "Data and method",
+    "text": "Data and method\n\nSource: official SEC EDGAR API (companyfacts XBRL), annual 10-K filings. Main period FY2022–2025; 2019–2021 only as context, because AMD before the Xilinx acquisition isn’t comparable.\nExtraction checks: fiscal years are selected by period end date and duration, not the fy field. A re-extraction matched all 70 values from the first pass, and revenue was spot-checked against reported figures. Total liabilities were derived and validated against the sum of their components.\nAnalysis: liquidity, solvency, profitability, efficiency and cash-flow ratios; Altman Z’’ (main metric) and Z’ (secondary), with a breakdown of what drives each score and a sensitivity check."
+  },
+  {
+    "objectID": "intel-amd.html#key-findings",
+    "href": "intel-amd.html#key-findings",
+    "title": "Intel vs AMD: financial health 2022–2025",
+    "section": "Key findings",
+    "text": "Key findings\n\n\n2.85 vs 2.02current ratio 2025, AMD vs Intel\n\n\n0.05 vs 0.41debt / equity 2025, AMD vs Intel\n\n\n10.7% vs −4.2%operating margin 2025, AMD vs Intel\n\n\n19.4% vs −9.4%FCF margin 2025, AMD vs Intel\n\n\nAMD is stronger on every block in 2025. It has net cash of $7.3B against Intel’s net debt of $9.2B, and its liquidity improves every year using cash it generates itself.\nIntel’s 2025 recovery is a recapitalisation, not an operational turnaround. Its Z’’ rises from 2.01 (grey zone) to 3.24 (safe zone), but 0.96 of that 1.23-point increase comes from working capital and equity, pushed up by new shares, minority interests ($5.8B → $12.1B) and partner contributions. EBIT is still negative (−$2.2B), free cash flow is −$4.9B, and interest coverage is −2.0×. Free cash flow has been negative four years running, −$44B in total.\nAMD’s Z’’ is flattered by Xilinx goodwill. Goodwill and intangibles make up 66% of its equity in 2025. On tangible equity its Z’’ falls from 6.85 to 3.69 (still safe); in 2022 it would have been 1.49 (grey).\nWhat a credit analyst would watch next:\n\nIntel: whether EBIT covers interest without new capital raises, whether free cash flow turns positive, and how much dilution and minority interest grow.\nAMD: inventory days (80 → 142), gross margin, and the risk of a goodwill impairment on $25B."
+  },
+  {
+    "objectID": "intel-amd.html#limitations",
+    "href": "intel-amd.html#limitations",
+    "title": "Intel vs AMD: financial health 2022–2025",
+    "section": "Limitations",
+    "text": "Limitations\n\nFour years × two companies is too little data for statistical inference. Trends are described by direction, not tested.\nThe Altman models were calibrated on firms from past decades, so their zones are indicative, not bankruptcy probabilities. Z’’ and Z’ put Intel in different zones, which is itself a sign of model uncertainty.\nWithout market data, there’s no original Z-score, valuation ratios, credit spreads or ratings."
+  },
+  {
+    "objectID": "intel-amd.html#full-report-spanish",
+    "href": "intel-amd.html#full-report-spanish",
+    "title": "Intel vs AMD: financial health 2022–2025",
+    "section": "Full report (Spanish)",
+    "text": "Full report (Spanish)\nThe complete report, with every table, chart and the code, is embedded below. Open it in a new tab."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Benedict Bagoyo",
+    "section": "",
+    "text": "I’m a final-year Applied Statistics student in Madrid, looking for a data analyst internship from January 2027 (with a university practicum agreement through UCM). This site collects my projects. Each tab has an English summary of the question, method and results, with the original report or slides (in Spanish) underneath."
+  },
+  {
+    "objectID": "index.html#projects",
+    "href": "index.html#projects",
+    "title": "Benedict Bagoyo",
+    "section": "Projects",
+    "text": "Projects\n\nIntel vs AMD: financial health 2022–2025\nCredit-risk comparison of two major semiconductor companies built from SEC EDGAR 10-K filings: liquidity, leverage, profitability, cash flow and Altman Z-scores.\n\n\n2.01 → 3.24Intel Z’’ 2024 → 2025, driven by financing, not operations\n\n\n6.85 → 3.69AMD Z’’ 2025 on reported vs tangible equity\n\n\n−$44BIntel cumulative free cash flow, 2022–2025\n\n\nPython (data extraction), R (analysis), Quarto\n\n\nFICO HELOC: explainable credit scoring\nLogistic regression model that predicts default on home equity credit lines and explains every decision through odds ratios, in line with Basel III and EU AI Act transparency requirements.\n\n\n0.80AUC on the 30% test set\n\n\n73%test accuracy\n\n\n9,682loan applications\n\n\nPython, SPSS"
+  },
+  {
+    "objectID": "index.html#contact",
+    "href": "index.html#contact",
+    "title": "Benedict Bagoyo",
+    "section": "Contact",
+    "text": "Contact\nLinkedIn"
+  }
+]

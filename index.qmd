@@ -1,0 +1,37 @@
+---
+title: "Benedict Bagoyo"
+subtitle: "Applied Statistics · Universidad Complutense de Madrid · graduating June 2027"
+toc: false
+---
+
+I'm a final-year Applied Statistics student in Madrid, looking for a data analyst internship from January 2027 (with a university practicum agreement through UCM). This site collects my projects. Each tab has an English summary of the question, method and results, with the original report or slides (in Spanish) underneath.
+
+## Projects
+
+### [Intel vs AMD: financial health 2022–2025](intel-amd.qmd)
+
+Credit-risk comparison of two major semiconductor companies built from SEC EDGAR 10-K filings: liquidity, leverage, profitability, cash flow and Altman Z-scores.
+
+::: {.kpi}
+<div><b>2.01 → 3.24</b><span>Intel Z'' 2024 → 2025, driven by financing, not operations</span></div>
+<div><b>6.85 → 3.69</b><span>AMD Z'' 2025 on reported vs tangible equity</span></div>
+<div><b>−$44B</b><span>Intel cumulative free cash flow, 2022–2025</span></div>
+:::
+
+*Python (data extraction), R (analysis), Quarto*
+
+### [FICO HELOC: explainable credit scoring](heloc.qmd)
+
+Logistic regression model that predicts default on home equity credit lines and explains every decision through odds ratios, in line with Basel III and EU AI Act transparency requirements.
+
+::: {.kpi}
+<div><b>0.80</b><span>AUC on the 30% test set</span></div>
+<div><b>73%</b><span>test accuracy</span></div>
+<div><b>9,682</b><span>loan applications</span></div>
+:::
+
+*Python, SPSS*
+
+## Contact
+
+[LinkedIn](https://www.linkedin.com/in/benebagoyo)
