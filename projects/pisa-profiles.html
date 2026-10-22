@@ -1,0 +1,221 @@
+<!doctype html> <!-- tells the browser this is a modern HTML5 page -->
+<html lang="en"> <!-- root element; the script switches lang to "es" in Spanish mode -->
+<head> <!-- page metadata, fonts and styles live here -->
+<meta charset="utf-8"> <!-- text encoding so accents (á, ñ) display correctly -->
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- makes the layout fit phone screens -->
+<title>Student profiles in PISA 2025: learning in the digital world | Benedict Bagoyo</title> <!-- text shown in the browser tab -->
+<meta name="description" content="Finding groups of Spanish students by how they learn with digital tools, then testing whether those groups can be predicted from their background."> <!-- summary shown in search results -->
+<meta property="og:title" content="Student profiles in PISA 2025: learning in the digital world | Benedict Bagoyo"> <!-- title shown when the link is shared -->
+<meta property="og:description" content="Finding groups of Spanish students by how they learn with digital tools, then testing whether those groups can be predicted from their background."> <!-- description shown with shared links -->
+<meta property="og:type" content="article"> <!-- tells social sites this is an article -->
+<meta name="theme-color" content="#F2F5F3"> <!-- colours the phone's browser bar; the script keeps it in sync with the theme -->
+<link rel="icon" href="../assets/clover.svg" type="image/svg+xml"> <!-- clover icon in the browser tab -->
+<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- opens the connection to Google Fonts early -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- same for the server that hosts the font files -->
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- loads the typeface used across the site -->
+<link rel="stylesheet" href="../assets/style.css"> <!-- shared styles for every page -->
+<script> // runs before the page draws, so a saved theme or language appears without a flash
+  try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* storage blocked */ } // apply saved light/dark choice
+  try { const l = localStorage.getItem('lang'); if (l) { document.documentElement.dataset.lang = l; document.documentElement.lang = l; } } catch (e) { /* storage blocked */ } // apply saved language choice
+</script> <!-- end of early script -->
+<script src="../assets/site.js" defer></script> <!-- shared behaviour; "defer" runs it after the page is built -->
+</head> <!-- end of metadata -->
+<body data-title-en="Student profiles in PISA 2025: learning in the digital world | Benedict Bagoyo" data-title-es="Perfiles de estudiantes en PISA 2025: aprender en el mundo digital | Benedict Bagoyo"> <!-- visible page starts here; tab title in each language -->
+<!-- ===== YOUR TEXT: everything from here down to the end of the footer is page content you can rewrite ===== -->
+<!-- HOW LANGUAGES WORK: class="en" holds English, class="es" holds Spanish; only one shows at a time. Edit each version right where it sits. -->
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="es">Saltar al contenido</span></a> <!-- lets keyboard users jump past the header -->
+
+<header class="topbar"> <!-- sticky header, same as the front page -->
+  <div class="wrap"> <!-- centres header content -->
+    <a class="brand" href="../index.html" data-aria-en="Benedict Bagoyo, home" data-aria-es="Benedict Bagoyo, inicio"> <!-- logo and name; back to the front page -->
+      <svg class="clover" viewBox="0 0 32 36" width="27" height="30" aria-hidden="true"> <!-- clover logo, first use -->
+        <defs><path id="leaf" d="M16 15.14C14.29 13.54 9.58 10.76 8.72 7.01C7.97 3.69 10.97 1.77 13.43 2.52C14.72 2.95 15.57 3.91 16 5.09C16.43 3.91 17.28 2.95 18.57 2.52C21.03 1.77 24.02 3.69 23.28 7.01C22.42 10.76 17.71 13.54 16 15.14Z"/></defs> <!-- one heart-shaped leaf, reused four times -->
+        <g class="clover-leaves"> <!-- the four leaves, which turn on hover -->
+          <use href="#leaf" transform="rotate(135 16 16)"/> <!-- lower-right leaf -->
+          <use href="#leaf" transform="rotate(225 16 16)"/> <!-- lower-left leaf -->
+          <use href="#leaf" transform="rotate(315 16 16)"/> <!-- upper-left leaf -->
+          <use class="lucky" href="#leaf" transform="rotate(45 16 16)"/> <!-- upper-right leaf; the teal fourth leaf -->
+        </g> <!-- end leaves -->
+        <path class="clover-stem" d="M16 16.5Q15.6 27 18 33.5"/> <!-- the stem, drawn on top of the leaves -->
+      </svg> <!-- end clover -->
+      <span class="brand-full">Benedict Bagoyo</span> <!-- your name; hidden on phones, where only the clover shows -->
+    </a> <!-- end logo link -->
+    <nav class="nav" data-aria-en="Main" data-aria-es="Principal"> <!-- main navigation -->
+      <a href="../index.html#projects" aria-current="page"><span class="en">Projects</span><span class="es">Proyectos</span></a> <!-- back to the projects section; highlighted because you're on a project page -->
+      <a href="../index.html#about"><span class="en">About</span><span class="es">Sobre mí</span></a> <!-- about section on the front page -->
+      <a class="nav-contact" href="../index.html#contact"><span class="en">Contact</span><span class="es">Contacto</span></a> <!-- contact section on the front page -->
+      <a class="en" href="../cv/Benedict_Bagoyo_CV_EN.pdf">CV</a> <!-- English CV, shown in English mode -->
+      <a class="es" href="../cv/Benedict_Bagoyo_CV_ES.pdf" hreflang="es">CV</a> <!-- Spanish CV, shown in Spanish mode -->
+      <button class="icon-btn lang-btn" id="lang-toggle" type="button" data-aria-en="Ver en español" data-aria-es="View in English"><span class="en" lang="es">ES</span><span class="es" lang="en">EN</span></button> <!-- language switch; shows the language you'd switch to -->
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch theme"> <!-- light/dark switch -->
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg> <!-- half-filled circle icon -->
+      </button> <!-- end theme switch -->
+    </nav> <!-- end navigation -->
+  </div> <!-- end header column -->
+</header> <!-- end header -->
+
+<main id="main"> <!-- main content; target of the skip link -->
+  <div class="wrap"> <!-- centred column -->
+    <section class="case-hero" id="top"> <!-- top of the project page -->
+      <nav class="crumbs" data-aria-en="Breadcrumb" data-aria-es="Ruta"> <!-- where this page sits in the site -->
+        <a href="../index.html#projects"><span class="en">Projects</span><span class="es">Proyectos</span></a> <!-- link back to all projects -->
+        <span aria-hidden="true">/</span> <!-- separator -->
+        <span aria-current="page"><span class="en">Student profiles in PISA 2025</span><span class="es">Perfiles de estudiantes en PISA 2025</span></span> <!-- this page -->
+      </nav> <!-- end trail -->
+      <h1><span class="en">Student profiles in PISA 2025: learning in the digital world</span><span class="es">Perfiles de estudiantes en PISA 2025: aprender en el mundo digital</span></h1> <!-- project title -->
+      <p class="case-lede"><span class="en">Finding groups of Spanish students by how they learn with digital tools, then testing whether those groups can be predicted from their background.</span><span class="es">Identificar grupos de estudiantes españoles según cómo aprenden con herramientas digitales y comprobar si esos grupos se pueden predecir a partir de su contexto.</span></p> <!-- one-paragraph summary -->
+      <dl class="meta glass"> <!-- key facts in a glass strip -->
+        <div><dt><span class="en">Status</span><span class="es">Estado</span></dt><dd><span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span></dd></div> <!-- project status -->
+        <div><dt><span class="en">Tools</span><span class="es">Herramientas</span></dt><dd>R</dd></div> <!-- software used -->
+        <div><dt><span class="en">Data</span><span class="es">Datos</span></dt><dd><span class="en">PISA 2025 (OECD), Spain</span><span class="es">PISA 2025 (OCDE), España</span></dd></div> <!-- dataset -->
+        <div><dt><span class="en">Team</span><span class="es">Equipo</span></dt><dd><span class="en">Individual</span><span class="es">Individual</span></dd></div> <!-- who did it -->
+      </dl> <!-- end facts -->
+    </section> <!-- end top section -->
+    <figure class="case-cover glass"> <!-- cover chart: the project's key result -->
+      <svg class="chart" viewBox="0 0 960 340" role="img" data-aria-en="Distribution of Learning in the Digital World scores, Spain" data-aria-es="Distribución de las puntuaciones en Learning in the Digital World, España"> <!-- chart; its spoken name switches with the language -->
+      <line class="grid" x1="52" x2="946" y1="294.0" y2="294.0"/> <!-- grid line -->
+      <text class="axis" x="44" y="298.0" text-anchor="end">0%</text> <!-- y value -->
+      <line class="grid" x1="52" x2="946" y1="186.1" y2="186.1"/> <!-- grid line -->
+      <text class="axis" x="44" y="190.1" text-anchor="end">10%</text> <!-- y value -->
+      <line class="grid" x1="52" x2="946" y1="78.1" y2="78.1"/> <!-- grid line -->
+      <text class="axis" x="44" y="82.1" text-anchor="end">20%</text> <!-- y value -->
+      <g class="pt"><title>150–200: 0.2%</title><rect class="bar" x="53.0" y="291.5" width="61.9" height="2.5" rx="2"/></g> <!-- bin 150–200 -->
+      <g class="pt"><title>200–250: 0.8%</title><rect class="bar" x="116.9" y="285.2" width="61.9" height="8.8" rx="2"/></g> <!-- bin 200–250 -->
+      <g class="pt"><title>250–300: 2.1%</title><rect class="bar" x="180.7" y="271.3" width="61.9" height="22.7" rx="2"/></g> <!-- bin 250–300 -->
+      <g class="pt"><title>300–350: 4.2%</title><rect class="bar" x="244.6" y="248.8" width="61.9" height="45.2" rx="2"/></g> <!-- bin 300–350 -->
+      <g class="pt"><title>350–400: 7.2%</title><rect class="bar" x="308.4" y="216.0" width="61.9" height="78.0" rx="2"/></g> <!-- bin 350–400 -->
+      <g class="pt"><title>400–450: 13.1%</title><rect class="bar" x="372.3" y="152.2" width="61.9" height="141.8" rx="2"/></g> <!-- bin 400–450 -->
+      <g class="pt"><title>450–500: 19.4%</title><rect class="bar" x="436.1" y="84.3" width="61.9" height="209.7" rx="2"/></g> <!-- bin 450–500 -->
+      <g class="pt"><title>500–550: 21.9%</title><rect class="bar" x="500.0" y="57.5" width="61.9" height="236.5" rx="2"/></g> <!-- bin 500–550 -->
+      <g class="pt"><title>550–600: 17.3%</title><rect class="bar" x="563.9" y="107.7" width="61.9" height="186.3" rx="2"/></g> <!-- bin 550–600 -->
+      <g class="pt"><title>600–650: 9.4%</title><rect class="bar" x="627.7" y="192.6" width="61.9" height="101.4" rx="2"/></g> <!-- bin 600–650 -->
+      <g class="pt"><title>650–700: 3.4%</title><rect class="bar" x="691.6" y="257.2" width="61.9" height="36.8" rx="2"/></g> <!-- bin 650–700 -->
+      <g class="pt"><title>700–750: 0.8%</title><rect class="bar" x="755.4" y="285.7" width="61.9" height="8.3" rx="2"/></g> <!-- bin 700–750 -->
+      <g class="pt"><title>750–800: 0.1%</title><rect class="bar" x="819.3" y="292.7" width="61.9" height="1.3" rx="2"/></g> <!-- bin 750–800 -->
+      <g class="pt"><title>800–850: 0.0%</title><rect class="bar" x="883.1" y="294.0" width="61.9" height="0.0" rx="2"/></g> <!-- bin 800–850 -->
+      <text class="axis" x="52.0" y="312" text-anchor="middle">150</text> <!-- x value -->
+      <text class="axis" x="179.7" y="312" text-anchor="middle">250</text> <!-- x value -->
+      <text class="axis" x="307.4" y="312" text-anchor="middle">350</text> <!-- x value -->
+      <text class="axis" x="435.1" y="312" text-anchor="middle">450</text> <!-- x value -->
+      <text class="axis" x="562.9" y="312" text-anchor="middle">550</text> <!-- x value -->
+      <text class="axis" x="690.6" y="312" text-anchor="middle">650</text> <!-- x value -->
+      <text class="axis" x="818.3" y="312" text-anchor="middle">750</text> <!-- x value -->
+      <text class="axis" x="946.0" y="312" text-anchor="middle">850</text> <!-- x value -->
+      <text class="axis en" x="499.0" y="334.0" text-anchor="middle">Score (first plausible value)</text> <!-- label (English) -->
+      <text class="axis es" x="499.0" y="334.0" text-anchor="middle">Puntuación (primer valor plausible)</text> <!-- label (Spanish) -->
+      <text class="axis en" x="14.0" y="158.0" text-anchor="middle" transform="rotate(-90 14 158.0)">Share of students</text> <!-- label (English) -->
+      <text class="axis es" x="14.0" y="158.0" text-anchor="middle" transform="rotate(-90 14 158.0)">Porcentaje de estudiantes</text> <!-- label (Spanish) -->
+      <line class="ref strong" x1="497.5" x2="497.5" y1="18" y2="294"/> <!-- reference line -->
+      <text class="label small en" x="503.5" y="28.0" text-anchor="start">Mean 499</text> <!-- label (English) -->
+      <text class="label small es" x="503.5" y="28.0" text-anchor="start">Media 499</text> <!-- label (Spanish) -->
+      </svg> <!-- end chart -->
+      <figcaption><span class="en">Weighted distribution for the 29,966 Spanish students who took the new assessment. The mean, averaged over all ten plausible values, is 499.</span><span class="es">Distribución ponderada de los 29.966 estudiantes españoles que hicieron la nueva evaluación. La media, promediando los diez valores plausibles, es 499.</span></figcaption> <!-- caption -->
+    </figure> <!-- end cover -->
+
+    <div class="case-body"> <!-- contents list plus write-up -->
+      <nav class="toc" data-spy data-aria-en="On this page" data-aria-es="En esta página"> <!-- contents list; highlights the section you are reading -->
+        <p><span class="en">On this page</span><span class="es">En esta página</span></p> <!-- list heading -->
+        <a href="#question"><span class="en">Question</span><span class="es">Pregunta</span></a> <!-- jumps to "Question" -->
+        <a href="#data"><span class="en">Data</span><span class="es">Datos</span></a> <!-- jumps to "Data" -->
+        <a href="#progress-so-far"><span class="en">First look</span><span class="es">Primer vistazo</span></a> <!-- jumps to "First look" -->
+        <a href="#plan"><span class="en">Plan</span><span class="es">Plan</span></a> <!-- jumps to "Plan" -->
+        <a href="#why"><span class="en">Why it matters</span><span class="es">Por qué importa</span></a> <!-- jumps to "Why it matters" -->
+      </nav> <!-- end contents list -->
+      <article class="prose"> <!-- the write-up -->
+        <section id="question"> <!-- section: Question -->
+          <h2><span class="en">Question</span><span class="es">Pregunta</span></h2> <!-- section heading -->
+          <p class="en">What profiles of Spanish students emerge from how they use and feel about digital tools for learning, and can those profiles be predicted from their background and habits?</p><p class="es">¿Qué perfiles de estudiantes españoles surgen según cómo usan y valoran las herramientas digitales para aprender, y se pueden predecir a partir de su contexto y sus hábitos?</p> <!-- paragraph -->
+        </section> <!-- end Question -->
+        <section id="data"> <!-- section: Data -->
+          <h2><span class="en">Data</span><span class="es">Datos</span></h2> <!-- section heading -->
+          <p class="en">PISA 2025 introduced a new assessment, Learning in the Digital World. I have downloaded the OECD microdata and extracted the Spanish students who took it: 29,966 students, representing about 460,000 fifteen-year-olds once survey weights are applied.</p><p class="es">PISA 2025 introdujo una nueva evaluación, Learning in the Digital World. He descargado los microdatos de la OCDE y extraído a los estudiantes españoles que la realizaron: 29.966 estudiantes, que representan a unos 460.000 jóvenes de 15 años una vez aplicados los pesos muestrales.</p> <!-- paragraph -->
+          <p class="en">The working file keeps the ten plausible values for the assessment score, the student weights, and indices on digital use at home and at school, AI use at school, self-regulation, persistence, curiosity, socio-economic status, immigrant background and home language.</p><p class="es">El fichero de trabajo conserva los diez valores plausibles de la puntuación, los pesos de los estudiantes e índices sobre el uso digital en casa y en el centro, el uso de IA en el centro, la autorregulación, la perseverancia, la curiosidad, el nivel socioeconómico, el origen inmigrante y la lengua del hogar.</p> <!-- paragraph -->
+        </section> <!-- end Data -->
+        <section id="progress-so-far"> <!-- section: First look at the data -->
+          <h2><span class="en">First look at the data</span><span class="es">Primer vistazo a los datos</span></h2> <!-- section heading -->
+          <figure class="figure glass"> <!-- chart frame -->
+            <svg class="chart" viewBox="0 0 480 300" role="img" data-aria-en="Mean score by socio-economic quartile" data-aria-es="Puntuación media por cuartil socioeconómico"> <!-- chart; its spoken name switches with the language -->
+            <line class="grid" x1="52" x2="464" y1="254.0" y2="254.0"/> <!-- grid line at 0 -->
+            <text class="axis" x="44" y="258.0" text-anchor="end">0</text> <!-- y-axis value -->
+            <line class="grid" x1="52" x2="464" y1="195.0" y2="195.0"/> <!-- grid line at 150 -->
+            <text class="axis" x="44" y="199.0" text-anchor="end">150</text> <!-- y-axis value -->
+            <line class="grid" x1="52" x2="464" y1="136.0" y2="136.0"/> <!-- grid line at 300 -->
+            <text class="axis" x="44" y="140.0" text-anchor="end">300</text> <!-- y-axis value -->
+            <line class="grid" x1="52" x2="464" y1="77.0" y2="77.0"/> <!-- grid line at 450 -->
+            <text class="axis" x="44" y="81.0" text-anchor="end">450</text> <!-- y-axis value -->
+            <line class="grid" x1="52" x2="464" y1="18.0" y2="18.0"/> <!-- grid line at 600 -->
+            <text class="axis" x="44" y="22.0" text-anchor="end">600</text> <!-- y-axis value -->
+            <text class="axis en" x="258.0" y="294.0" text-anchor="middle">Socio-economic quartile (Q1 lowest)</text> <!-- label (English) -->
+            <text class="axis es" x="258.0" y="294.0" text-anchor="middle">Cuartil socioeconómico (Q1 el más bajo)</text> <!-- label (Spanish) -->
+            <text class="axis en" x="14.0" y="136.0" text-anchor="middle" transform="rotate(-90 14 136.0)">Mean score</text> <!-- label (English) -->
+            <text class="axis es" x="14.0" y="136.0" text-anchor="middle" transform="rotate(-90 14 136.0)">Puntuación media</text> <!-- label (Spanish) -->
+            <g class="pt"><title>Q1: mean score 476</title><path class="bar" d="M74.7,254.0 V70.7 Q74.7,66.7 78.7,66.7 H128.3 Q132.3,66.7 132.3,70.7 V254.0 Z"/></g> <!-- bar for Q1; hover shows its value -->
+            <text class="label" x="103.5" y="60.7" text-anchor="middle">476</text> <!-- value above the bar -->
+            <text class="axis" x="103.5" y="272" text-anchor="middle">Q1</text> <!-- bar name under the axis -->
+            <g class="pt"><title>Q2: mean score 494</title><path class="bar" d="M177.7,254.0 V63.8 Q177.7,59.8 181.7,59.8 H231.3 Q235.3,59.8 235.3,63.8 V254.0 Z"/></g> <!-- bar for Q2; hover shows its value -->
+            <text class="label" x="206.5" y="53.8" text-anchor="middle">494</text> <!-- value above the bar -->
+            <text class="axis" x="206.5" y="272" text-anchor="middle">Q2</text> <!-- bar name under the axis -->
+            <g class="pt"><title>Q3: mean score 518</title><path class="bar" d="M280.7,254.0 V54.3 Q280.7,50.3 284.7,50.3 H334.3 Q338.3,50.3 338.3,54.3 V254.0 Z"/></g> <!-- bar for Q3; hover shows its value -->
+            <text class="label" x="309.5" y="44.3" text-anchor="middle">518</text> <!-- value above the bar -->
+            <text class="axis" x="309.5" y="272" text-anchor="middle">Q3</text> <!-- bar name under the axis -->
+            <g class="pt"><title>Q4: mean score 528</title><path class="bar" d="M383.7,254.0 V50.2 Q383.7,46.2 387.7,46.2 H437.3 Q441.3,46.2 441.3,50.2 V254.0 Z"/></g> <!-- bar for Q4; hover shows its value -->
+            <text class="label" x="412.5" y="40.2" text-anchor="middle">528</text> <!-- value above the bar -->
+            <text class="axis" x="412.5" y="272" text-anchor="middle">Q4</text> <!-- bar name under the axis -->
+            </svg> <!-- end chart -->
+            <figcaption><span class="en">Students in the most advantaged quarter score 52 points higher than those in the least advantaged. Weighted means over all ten plausible values.</span><span class="es">Los estudiantes del cuarto más favorecido puntúan 52 puntos más que los del menos favorecido. Medias ponderadas sobre los diez valores plausibles.</span></figcaption> <!-- caption -->
+          </figure> <!-- end chart frame -->
+          <p class="en">Before any clustering, the data already show the socio-economic gradient that the profiles will need to account for.</p><p class="es">Antes de agrupar, los datos ya muestran el gradiente socioeconómico que los perfiles tendrán que tener en cuenta.</p> <!-- paragraph -->
+        </section> <!-- end First look at the data -->
+        <section id="plan"> <!-- section: Plan -->
+          <h2><span class="en">Plan</span><span class="es">Plan</span></h2> <!-- section heading -->
+          <ol class="progress"> <!-- steps, in order; ticked ones are done -->
+            <li class="done"><span class="en">Download the PISA 2025 microdata and extract the Spanish sample in R.</span><span class="es">Descargar los microdatos de PISA 2025 y extraer la muestra española en R.</span></li> <!-- done -->
+            <li><span class="en">Explore the indices and handle missing values.</span><span class="es">Explorar los índices y tratar los valores perdidos.</span></li> <!-- next -->
+            <li><span class="en">Cluster students into profiles and compare solutions with different numbers of groups.</span><span class="es">Agrupar a los estudiantes en perfiles y comparar soluciones con distinto número de grupos.</span></li> <!-- planned -->
+            <li><span class="en">Describe each profile and how its scores differ, using all ten plausible values and the survey weights.</span><span class="es">Describir cada perfil y cómo difieren sus puntuaciones, usando los diez valores plausibles y los pesos muestrales.</span></li> <!-- planned -->
+            <li><span class="en">Train classification models to predict a student's profile and evaluate them on held-out data.</span><span class="es">Entrenar modelos de clasificación para predecir el perfil de cada estudiante y evaluarlos con datos reservados.</span></li> <!-- planned -->
+          </ol> <!-- end steps -->
+        </section> <!-- end Plan -->
+        <section id="why"> <!-- section: Why it matters -->
+          <h2><span class="en">Why it matters</span><span class="es">Por qué importa</span></h2> <!-- section heading -->
+          <p class="en">Segmenting a population and predicting which segment a new case belongs to is the same workflow banks and consultancies use for customers and borrowers.</p><p class="es">Segmentar una población y predecir a qué segmento pertenece un caso nuevo es el mismo flujo de trabajo que usan bancos y consultoras con clientes y prestatarios.</p> <!-- paragraph -->
+        </section> <!-- end Why it matters -->
+      </article> <!-- end write-up -->
+    </div> <!-- end body -->
+
+    <section class="next"> <!-- link to the next project -->
+      <p><span class="en">Next project</span><span class="es">Siguiente proyecto</span></p> <!-- small label -->
+      <a class="next-card glass lift" href="streaming-revenue.html"> <!-- small glass card; tints on hover or when held -->
+        <strong><span class="en">Where subscription revenue comes from in music streaming</span><span class="es">De dónde vienen los ingresos por suscripción en el streaming de música</span></strong> <!-- next project title -->
+        <span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- its status and year -->
+      </a> <!-- end card -->
+    </section> <!-- end next project -->
+  </div> <!-- end centred column -->
+</main> <!-- end main content -->
+
+<footer> <!-- page footer -->
+  <div class="wrap foot"> <!-- clover, small print and icons in a row -->
+    <a class="clover-link" href="#top" data-aria-en="Back to top" data-aria-es="Volver arriba"> <!-- the clover also takes you back to the top -->
+      <svg class="clover" viewBox="0 0 32 36" width="40" height="45" aria-hidden="true"> <!-- clover logo, second use -->
+        <g class="clover-leaves"> <!-- the four leaves, which turn on hover -->
+          <use href="#leaf" transform="rotate(135 16 16)"/> <!-- lower-right leaf -->
+          <use href="#leaf" transform="rotate(225 16 16)"/> <!-- lower-left leaf -->
+          <use href="#leaf" transform="rotate(315 16 16)"/> <!-- upper-left leaf -->
+          <use class="lucky" href="#leaf" transform="rotate(45 16 16)"/> <!-- upper-right leaf; the teal fourth leaf -->
+        </g> <!-- end leaves -->
+        <path class="clover-stem" d="M16 16.5Q15.6 27 18 33.5"/> <!-- the stem, drawn on top of the leaves -->
+      </svg> <!-- end clover -->
+    </a> <!-- end clover link -->
+    <div> <!-- footer text -->
+      <p>© 2026 Benedict Bagoyo</p> <!-- copyright line -->
+      <p><span class="en">Roughly one clover in 5,000 grows a fourth leaf.</span><span class="es">Aproximadamente uno de cada 5.000 tréboles tiene una cuarta hoja.</span></p> <!-- small personal note; keep it the same as on the front page -->
+    </div> <!-- end footer text -->
+    <div class="foot-social"> <!-- small icons on the right -->
+      <a class="social social-sm social-linkedin" href="https://www.linkedin.com/in/YOUR-PROFILE" aria-label="LinkedIn" data-tip="LinkedIn"></a> <!-- LinkedIn; replace YOUR-PROFILE -->
+      <a class="social social-sm social-github" href="https://github.com/YOUR-USERNAME" aria-label="GitHub" data-tip="GitHub"></a> <!-- GitHub; replace YOUR-USERNAME -->
+    </div> <!-- end icons -->
+  </div> <!-- end footer column -->
+</footer> <!-- end footer -->
+<!-- ===== END OF YOUR TEXT ===== -->
+</body> <!-- end of visible page -->
+</html> <!-- end of document -->

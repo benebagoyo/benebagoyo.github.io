@@ -1,0 +1,196 @@
+<!doctype html> <!-- tells the browser this is a modern HTML5 page -->
+<html lang="en"> <!-- root element; the script switches lang to "es" in Spanish mode -->
+<head> <!-- page metadata, fonts and styles live here -->
+<meta charset="utf-8"> <!-- text encoding so accents (á, ñ) display correctly -->
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- makes the layout fit phone screens -->
+<title>Do searches about life in Europe track inflation? | Benedict Bagoyo</title> <!-- text shown in the browser tab -->
+<meta name="description" content="Comparing Google search interest in living in Europe with the EU's harmonised consumer price index, 2019–2025."> <!-- summary shown in search results -->
+<meta property="og:title" content="Do searches about life in Europe track inflation? | Benedict Bagoyo"> <!-- title shown when the link is shared -->
+<meta property="og:description" content="Comparing Google search interest in living in Europe with the EU's harmonised consumer price index, 2019–2025."> <!-- description shown with shared links -->
+<meta property="og:type" content="article"> <!-- tells social sites this is an article -->
+<meta name="theme-color" content="#F2F5F3"> <!-- colours the phone's browser bar; the script keeps it in sync with the theme -->
+<link rel="icon" href="../assets/clover.svg" type="image/svg+xml"> <!-- clover icon in the browser tab -->
+<link rel="preconnect" href="https://fonts.googleapis.com"> <!-- opens the connection to Google Fonts early -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- same for the server that hosts the font files -->
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- loads the typeface used across the site -->
+<link rel="stylesheet" href="../assets/style.css"> <!-- shared styles for every page -->
+<script> // runs before the page draws, so a saved theme or language appears without a flash
+  try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* storage blocked */ } // apply saved light/dark choice
+  try { const l = localStorage.getItem('lang'); if (l) { document.documentElement.dataset.lang = l; document.documentElement.lang = l; } } catch (e) { /* storage blocked */ } // apply saved language choice
+</script> <!-- end of early script -->
+<script src="../assets/site.js" defer></script> <!-- shared behaviour; "defer" runs it after the page is built -->
+</head> <!-- end of metadata -->
+<body data-title-en="Do searches about life in Europe track inflation? | Benedict Bagoyo" data-title-es="¿Siguen las búsquedas sobre vivir en Europa a la inflación? | Benedict Bagoyo"> <!-- visible page starts here; tab title in each language -->
+<!-- ===== YOUR TEXT: everything from here down to the end of the footer is page content you can rewrite ===== -->
+<!-- HOW LANGUAGES WORK: class="en" holds English, class="es" holds Spanish; only one shows at a time. Edit each version right where it sits. -->
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="es">Saltar al contenido</span></a> <!-- lets keyboard users jump past the header -->
+
+<header class="topbar"> <!-- sticky header, same as the front page -->
+  <div class="wrap"> <!-- centres header content -->
+    <a class="brand" href="../index.html" data-aria-en="Benedict Bagoyo, home" data-aria-es="Benedict Bagoyo, inicio"> <!-- logo and name; back to the front page -->
+      <svg class="clover" viewBox="0 0 32 36" width="27" height="30" aria-hidden="true"> <!-- clover logo, first use -->
+        <defs><path id="leaf" d="M16 15.14C14.29 13.54 9.58 10.76 8.72 7.01C7.97 3.69 10.97 1.77 13.43 2.52C14.72 2.95 15.57 3.91 16 5.09C16.43 3.91 17.28 2.95 18.57 2.52C21.03 1.77 24.02 3.69 23.28 7.01C22.42 10.76 17.71 13.54 16 15.14Z"/></defs> <!-- one heart-shaped leaf, reused four times -->
+        <g class="clover-leaves"> <!-- the four leaves, which turn on hover -->
+          <use href="#leaf" transform="rotate(135 16 16)"/> <!-- lower-right leaf -->
+          <use href="#leaf" transform="rotate(225 16 16)"/> <!-- lower-left leaf -->
+          <use href="#leaf" transform="rotate(315 16 16)"/> <!-- upper-left leaf -->
+          <use class="lucky" href="#leaf" transform="rotate(45 16 16)"/> <!-- upper-right leaf; the teal fourth leaf -->
+        </g> <!-- end leaves -->
+        <path class="clover-stem" d="M16 16.5Q15.6 27 18 33.5"/> <!-- the stem, drawn on top of the leaves -->
+      </svg> <!-- end clover -->
+      <span class="brand-full">Benedict Bagoyo</span> <!-- your name; hidden on phones, where only the clover shows -->
+    </a> <!-- end logo link -->
+    <nav class="nav" data-aria-en="Main" data-aria-es="Principal"> <!-- main navigation -->
+      <a href="../index.html#projects" aria-current="page"><span class="en">Projects</span><span class="es">Proyectos</span></a> <!-- back to the projects section; highlighted because you're on a project page -->
+      <a href="../index.html#about"><span class="en">About</span><span class="es">Sobre mí</span></a> <!-- about section on the front page -->
+      <a class="nav-contact" href="../index.html#contact"><span class="en">Contact</span><span class="es">Contacto</span></a> <!-- contact section on the front page -->
+      <a class="en" href="../cv/Benedict_Bagoyo_CV_EN.pdf">CV</a> <!-- English CV, shown in English mode -->
+      <a class="es" href="../cv/Benedict_Bagoyo_CV_ES.pdf" hreflang="es">CV</a> <!-- Spanish CV, shown in Spanish mode -->
+      <button class="icon-btn lang-btn" id="lang-toggle" type="button" data-aria-en="Ver en español" data-aria-es="View in English"><span class="en" lang="es">ES</span><span class="es" lang="en">EN</span></button> <!-- language switch; shows the language you'd switch to -->
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch theme"> <!-- light/dark switch -->
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg> <!-- half-filled circle icon -->
+      </button> <!-- end theme switch -->
+    </nav> <!-- end navigation -->
+  </div> <!-- end header column -->
+</header> <!-- end header -->
+
+<main id="main"> <!-- main content; target of the skip link -->
+  <div class="wrap"> <!-- centred column -->
+    <section class="case-hero" id="top"> <!-- top of the project page -->
+      <nav class="crumbs" data-aria-en="Breadcrumb" data-aria-es="Ruta"> <!-- where this page sits in the site -->
+        <a href="../index.html#projects"><span class="en">Projects</span><span class="es">Proyectos</span></a> <!-- link back to all projects -->
+        <span aria-hidden="true">/</span> <!-- separator -->
+        <span aria-current="page"><span class="en">Google Trends and inflation</span><span class="es">Google Trends e inflación</span></span> <!-- this page -->
+      </nav> <!-- end trail -->
+      <h1><span class="en">Do searches about life in Europe track inflation?</span><span class="es">¿Siguen las búsquedas sobre vivir en Europa a la inflación?</span></h1> <!-- project title -->
+      <p class="case-lede"><span class="en">Comparing Google search interest in living in Europe with the EU's harmonised consumer price index, 2019–2025.</span><span class="es">Comparación del interés de búsqueda en Google sobre vivir en Europa con el índice armonizado de precios de consumo de la UE, 2019–2025.</span></p> <!-- one-paragraph summary -->
+      <dl class="meta glass"> <!-- key facts in a glass strip -->
+        <div><dt><span class="en">Status</span><span class="es">Estado</span></dt><dd><span class="status-line"><span class="status status-done"><span class="en">Complete</span><span class="es">Completado</span></span><span class="year">2025</span></span></dd></div> <!-- status and year -->
+        <div><dt><span class="en">Tools</span><span class="es">Herramientas</span></dt><dd>R, Excel</dd></div> <!-- software used -->
+        <div><dt><span class="en">Data</span><span class="es">Datos</span></dt><dd><span class="en">Google Trends, Eurostat HICP</span><span class="es">Google Trends, IPCA de Eurostat</span></dd></div> <!-- datasets -->
+        <div><dt><span class="en">Team</span><span class="es">Equipo</span></dt><dd><span class="en">Individual</span><span class="es">Individual</span></dd></div> <!-- who did it -->
+      </dl> <!-- end facts -->
+      <div class="actions"> <!-- links for this project -->
+        <a class="btn btn-ghost" href="../assets/docs/google-trends-report.pdf"><span class="en">Read the original report (Spanish, PDF)</span><span class="es">Leer el informe original (PDF)</span></a> <!-- your original report -->
+      </div> <!-- end links -->
+    </section> <!-- end top section -->
+    <figure class="case-cover glass"> <!-- cover image: the two series -->
+      <img src="../assets/img/gt-scaled-series.png" alt="Rescaled HICP and search interest, 2019–2025"> <!-- chart from the original R analysis -->
+      <figcaption><span class="en">Both series rescaled to a maximum of 100 (left axis; the right axis shows the HICP's original values). The HICP (red) climbs smoothly while search interest (blue) moves in bursts.</span><span class="es">Ambas series reescaladas a un máximo de 100 (eje izquierdo; el derecho muestra los valores originales del IPCA). El IPCA (rojo) sube de forma suave mientras que el interés de búsqueda (azul) avanza a saltos.</span></figcaption> <!-- caption -->
+    </figure> <!-- end cover -->
+
+    <div class="case-body"> <!-- contents list plus write-up -->
+      <nav class="toc" data-spy data-aria-en="On this page" data-aria-es="En esta página"> <!-- contents list; highlights the section you are reading -->
+        <p><span class="en">On this page</span><span class="es">En esta página</span></p> <!-- list heading -->
+        <a href="#question"><span class="en">Question</span><span class="es">Pregunta</span></a> <!-- jumps to "Question" -->
+        <a href="#data"><span class="en">Data</span><span class="es">Datos</span></a> <!-- jumps to "Data" -->
+        <a href="#results"><span class="en">Results</span><span class="es">Resultados</span></a> <!-- jumps to "Results" -->
+        <a href="#limitations"><span class="en">Limitations and next steps</span><span class="es">Limitaciones y próximos pasos</span></a> <!-- jumps to "Limitations and next steps" -->
+      </nav> <!-- end contents list -->
+      <article class="prose"> <!-- the write-up -->
+        <section id="question"> <!-- section: Question -->
+          <h2><span class="en">Question</span><span class="es">Pregunta</span></h2> <!-- section heading -->
+          <p class="en">What people search for online can reflect their worries before official statistics do. Does interest in living in Europe, searched from Spain, move with the harmonised index of consumer prices (HICP) that the European Central Bank uses to track inflation?</p><p class="es">Lo que la gente busca en internet puede reflejar sus preocupaciones antes que las estadísticas oficiales. ¿Se mueve el interés por vivir en Europa, buscado desde España, junto con el índice armonizado de precios de consumo (IPCA) que usa el Banco Central Europeo para seguir la inflación?</p> <!-- paragraph -->
+        </section> <!-- end Question -->
+        <section id="data"> <!-- section: Data -->
+          <h2><span class="en">Data</span><span class="es">Datos</span></h2> <!-- section heading -->
+          <p class="en">Monthly Google Trends series from Spain for “vivir en europa” and “comprar casa europa”, January 2019 to January 2025, and the EU's monthly HICP from Eurostat (2015 = 100). Related searches rising fastest included living in Portugal (+140%) and in Switzerland (+120%).</p><p class="es">Series mensuales de Google Trends desde España para «vivir en europa» y «comprar casa europa», de enero de 2019 a enero de 2025, y el IPCA mensual de la UE de Eurostat (2015 = 100). Entre las búsquedas relacionadas que más crecieron estaban vivir en Portugal (+140 %) y en Suiza (+120 %).</p> <!-- paragraph -->
+          <figure class="figure glass"> <!-- chart frame -->
+            <svg class="chart" viewBox="0 0 560 180" role="img" data-aria-en="Fastest-rising related searches" data-aria-es="Búsquedas relacionadas que más crecieron"> <!-- chart; its spoken name switches with the language -->
+            <line class="grid" x1="160.0" x2="160.0" y1="10" y2="140"/> <!-- grid line -->
+            <text class="axis" x="160.0" y="156" text-anchor="middle">+0%</text> <!-- x value -->
+            <line class="grid" x1="249.0" x2="249.0" y1="10" y2="140"/> <!-- grid line -->
+            <text class="axis" x="249.0" y="156" text-anchor="middle">+40%</text> <!-- x value -->
+            <line class="grid" x1="338.0" x2="338.0" y1="10" y2="140"/> <!-- grid line -->
+            <text class="axis" x="338.0" y="156" text-anchor="middle">+80%</text> <!-- x value -->
+            <line class="grid" x1="427.0" x2="427.0" y1="10" y2="140"/> <!-- grid line -->
+            <text class="axis" x="427.0" y="156" text-anchor="middle">+120%</text> <!-- x value -->
+            <line class="grid" x1="516.0" x2="516.0" y1="10" y2="140"/> <!-- grid line -->
+            <text class="axis" x="516.0" y="156" text-anchor="middle">+160%</text> <!-- x value -->
+            <text class="axis en" x="338.0" y="174.0" text-anchor="middle">Growth in search interest</text> <!-- label (English) -->
+            <text class="axis es" x="338.0" y="174.0" text-anchor="middle">Crecimiento del interés de búsqueda</text> <!-- label (Spanish) -->
+            <text class="axis en" x="152.0" y="27.0" text-anchor="end">«vivir en portugal»</text> <!-- label (English) -->
+            <text class="axis es" x="152.0" y="27.0" text-anchor="end">«vivir en portugal»</text> <!-- label (Spanish) -->
+            <g class="pt"><title>«vivir en portugal»: +140%</title><rect class="bar" x="160.0" y="15.0" width="311.5" height="16" rx="3"/></g> <!-- bar; hover shows its value -->
+            <text class="label small" x="477.5" y="27.0" text-anchor="start">+140%</text> <!-- value at the bar end -->
+            <text class="axis en" x="152.0" y="53.0" text-anchor="end">«vivir en suiza»</text> <!-- label (English) -->
+            <text class="axis es" x="152.0" y="53.0" text-anchor="end">«vivir en suiza»</text> <!-- label (Spanish) -->
+            <g class="pt"><title>«vivir en suiza»: +120%</title><rect class="bar" x="160.0" y="41.0" width="267.0" height="16" rx="3"/></g> <!-- bar; hover shows its value -->
+            <text class="label small" x="433.0" y="53.0" text-anchor="start">+120%</text> <!-- value at the bar end -->
+            <text class="axis en" x="152.0" y="79.0" text-anchor="end">«suiza»</text> <!-- label (English) -->
+            <text class="axis es" x="152.0" y="79.0" text-anchor="end">«suiza»</text> <!-- label (Spanish) -->
+            <g class="pt"><title>«suiza»: +120%</title><rect class="bar" x="160.0" y="67.0" width="267.0" height="16" rx="3"/></g> <!-- bar; hover shows its value -->
+            <text class="label small" x="433.0" y="79.0" text-anchor="start">+120%</text> <!-- value at the bar end -->
+            <text class="axis en" x="152.0" y="105.0" text-anchor="end">«portugal»</text> <!-- label (English) -->
+            <text class="axis es" x="152.0" y="105.0" text-anchor="end">«portugal»</text> <!-- label (Spanish) -->
+            <g class="pt"><title>«portugal»: +110%</title><rect class="bar" x="160.0" y="93.0" width="244.8" height="16" rx="3"/></g> <!-- bar; hover shows its value -->
+            <text class="label small" x="410.8" y="105.0" text-anchor="start">+110%</text> <!-- value at the bar end -->
+            <text class="axis en" x="152.0" y="131.0" text-anchor="end">«vivir en noruega»</text> <!-- label (English) -->
+            <text class="axis es" x="152.0" y="131.0" text-anchor="end">«vivir en noruega»</text> <!-- label (Spanish) -->
+            <g class="pt"><title>«vivir en noruega»: +90%</title><rect class="bar" x="160.0" y="119.0" width="200.2" height="16" rx="3"/></g> <!-- bar; hover shows its value -->
+            <text class="label small" x="366.2" y="131.0" text-anchor="start">+90%</text> <!-- value at the bar end -->
+            </svg> <!-- end chart -->
+            <figcaption><span class="en">Related searches for “vivir en europa” from Spain, 2019–2025. Interest shifts towards specific countries, led by Portugal and Switzerland.</span><span class="es">Búsquedas relacionadas con «vivir en europa» desde España, 2019–2025. El interés se desplaza hacia países concretos, encabezados por Portugal y Suiza.</span></figcaption> <!-- caption -->
+          </figure> <!-- end chart frame -->
+          <p class="en">I rescaled both series so their maximum equals 100 and compared them in R.</p><p class="es">Reescalé ambas series para que su máximo fuera 100 y las comparé en R.</p> <!-- paragraph -->
+        </section> <!-- end Data -->
+        <section id="results"> <!-- section: Results -->
+          <h2><span class="en">Results</span><span class="es">Resultados</span></h2> <!-- section heading -->
+          <div class="callout glass"> <!-- key results box -->
+            <p><span class="en">Key results</span><span class="es">Resultados clave</span></p> <!-- label -->
+            <dl class="keys"> <!-- the numbers -->
+              <div><dt><span class="en">Slope</span><span class="es">Pendiente</span></dt><dd><span class="en">0.64 per HICP point</span><span class="es">0,64 por punto de IPCA</span></dd></div> <!-- key result: Slope -->
+              <div><dt><span class="en">p-value</span><span class="es">p-valor</span></dt><dd>< 0.001</dd></div> <!-- key result: p-value -->
+              <div><dt><span class="en">Adjusted R²</span><span class="es">R² ajustado</span></dt><dd><span class="en">0.31 (r ≈ 0.57)</span><span class="es">0,31 (r ≈ 0,57)</span></dd></div> <!-- key result: Adjusted R² -->
+            </dl> <!-- end numbers -->
+          </div> <!-- end key results -->
+          <p class="en">A linear regression of search interest on the HICP finds a positive, highly significant relationship: higher prices go together with more searches about living in Europe. Price levels explain about a third of the variation in search interest.</p><p class="es">Una regresión lineal del interés de búsqueda sobre el IPCA encuentra una relación positiva y muy significativa: precios más altos van de la mano de más búsquedas sobre vivir en Europa. El nivel de precios explica en torno a un tercio de la variación del interés de búsqueda.</p> <!-- paragraph -->
+          <figure class="figure glass"> <!-- image frame -->
+            <img src="../assets/img/gt-regression.png" alt="Scatter plot of HICP against search interest with the fitted line" loading="lazy"> <!-- the image; loads only when scrolled near -->
+            <figcaption><span class="en">Each point is a month; the red line is the fitted regression.</span><span class="es">Cada punto es un mes; la línea roja es la regresión ajustada.</span></figcaption> <!-- caption under the image -->
+          </figure> <!-- end image frame -->
+        </section> <!-- end Results -->
+        <section id="limitations"> <!-- section: Limitations and next steps -->
+          <h2><span class="en">Limitations and next steps</span><span class="es">Limitaciones y próximos pasos</span></h2> <!-- section heading -->
+          <p class="en">Correlation is not causation, and both series trend upwards over these years, which can make unrelated series look connected. Other events, such as energy prices and trade tensions, affect both.</p><p class="es">Correlación no implica causalidad, y ambas series crecen a lo largo de estos años, lo que puede hacer que series sin relación parezcan conectadas. Otros acontecimientos, como los precios de la energía o las tensiones comerciales, afectan a ambas.</p> <!-- paragraph -->
+          <p class="en">A stronger version would remove the trends first (for example, by modelling month-to-month changes) and test whether search interest moves before official inflation figures are published, which is where its value as an early signal would lie.</p><p class="es">Una versión más sólida eliminaría primero las tendencias (por ejemplo, modelando los cambios mensuales) y comprobaría si el interés de búsqueda se adelanta a la publicación de los datos oficiales de inflación, que es donde estaría su valor como señal temprana.</p> <!-- paragraph -->
+        </section> <!-- end Limitations and next steps -->
+      </article> <!-- end write-up -->
+    </div> <!-- end body -->
+
+    <section class="next"> <!-- link to the next project -->
+      <p><span class="en">Next project</span><span class="es">Siguiente proyecto</span></p> <!-- small label -->
+      <a class="next-card glass lift" href="pisa-profiles.html"> <!-- small glass card; tints on hover or when held -->
+        <strong><span class="en">Student profiles in PISA 2025: learning in the digital world</span><span class="es">Perfiles de estudiantes en PISA 2025: aprender en el mundo digital</span></strong> <!-- next project title -->
+        <span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- its status and year -->
+      </a> <!-- end card -->
+    </section> <!-- end next project -->
+  </div> <!-- end centred column -->
+</main> <!-- end main content -->
+
+<footer> <!-- page footer -->
+  <div class="wrap foot"> <!-- clover, small print and icons in a row -->
+    <a class="clover-link" href="#top" data-aria-en="Back to top" data-aria-es="Volver arriba"> <!-- the clover also takes you back to the top -->
+      <svg class="clover" viewBox="0 0 32 36" width="40" height="45" aria-hidden="true"> <!-- clover logo, second use -->
+        <g class="clover-leaves"> <!-- the four leaves, which turn on hover -->
+          <use href="#leaf" transform="rotate(135 16 16)"/> <!-- lower-right leaf -->
+          <use href="#leaf" transform="rotate(225 16 16)"/> <!-- lower-left leaf -->
+          <use href="#leaf" transform="rotate(315 16 16)"/> <!-- upper-left leaf -->
+          <use class="lucky" href="#leaf" transform="rotate(45 16 16)"/> <!-- upper-right leaf; the teal fourth leaf -->
+        </g> <!-- end leaves -->
+        <path class="clover-stem" d="M16 16.5Q15.6 27 18 33.5"/> <!-- the stem, drawn on top of the leaves -->
+      </svg> <!-- end clover -->
+    </a> <!-- end clover link -->
+    <div> <!-- footer text -->
+      <p>© 2026 Benedict Bagoyo</p> <!-- copyright line -->
+      <p><span class="en">Roughly one clover in 5,000 grows a fourth leaf.</span><span class="es">Aproximadamente uno de cada 5.000 tréboles tiene una cuarta hoja.</span></p> <!-- small personal note; keep it the same as on the front page -->
+    </div> <!-- end footer text -->
+    <div class="foot-social"> <!-- small icons on the right -->
+      <a class="social social-sm social-linkedin" href="https://www.linkedin.com/in/YOUR-PROFILE" aria-label="LinkedIn" data-tip="LinkedIn"></a> <!-- LinkedIn; replace YOUR-PROFILE -->
+      <a class="social social-sm social-github" href="https://github.com/YOUR-USERNAME" aria-label="GitHub" data-tip="GitHub"></a> <!-- GitHub; replace YOUR-USERNAME -->
+    </div> <!-- end icons -->
+  </div> <!-- end footer column -->
+</footer> <!-- end footer -->
+<!-- ===== END OF YOUR TEXT ===== -->
+</body> <!-- end of visible page -->
+</html> <!-- end of document -->

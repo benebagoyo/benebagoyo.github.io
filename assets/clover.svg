@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"> <!-- browser-tab icon: the clover's four leaves, no stem -->
+  <path id="l" fill="#527D52" d="M16 15.14C14.29 13.54 9.58 10.76 8.72 7.01C7.97 3.69 10.97 1.77 13.43 2.52C14.72 2.95 15.57 3.91 16 5.09C16.43 3.91 17.28 2.95 18.57 2.52C21.03 1.77 24.02 3.69 23.28 7.01C22.42 10.76 17.71 13.54 16 15.14Z" transform="rotate(135 16 16)"/> <!-- lower-right leaf, green -->
+  <use href="#l" transform="rotate(90 16 16)"/> <!-- lower-left leaf, copy of the first -->
+  <use href="#l" transform="rotate(180 16 16)"/> <!-- upper-left leaf, copy of the first -->
+  <path fill="#0E848E" d="M16 15.14C14.29 13.54 9.58 10.76 8.72 7.01C7.97 3.69 10.97 1.77 13.43 2.52C14.72 2.95 15.57 3.91 16 5.09C16.43 3.91 17.28 2.95 18.57 2.52C21.03 1.77 24.02 3.69 23.28 7.01C22.42 10.76 17.71 13.54 16 15.14Z" transform="rotate(45 16 16)"/> <!-- upper-right leaf, teal -->
+</svg> <!-- end icon -->
