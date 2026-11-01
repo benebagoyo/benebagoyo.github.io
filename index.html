@@ -4,9 +4,9 @@
 <meta charset="utf-8"> <!-- text encoding so accents (á, ñ) display correctly -->
 <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- makes the layout fit phone screens -->
 <title>Benedict Bagoyo</title> <!-- text shown in the browser tab -->
-<meta name="description" content="Applied statistics student at Universidad Complutense de Madrid. Projects in credit risk, financial analytics and data dashboards."> <!-- summary shown in search results -->
-<meta property="og:title" content="Benedict Bagoyo: statistics for credit risk and financial decisions"> <!-- title shown when the link is shared on LinkedIn or WhatsApp -->
-<meta property="og:description" content="Applied statistics student at Universidad Complutense de Madrid. Projects in credit risk, financial analytics and data dashboards."> <!-- description shown with shared links -->
+<meta name="description" content="Benedict Bagoyo: AI prototyping with agents, backed by applied statistics. Projects include Komyut, an app prototype built with Claude Code, and statistical models in R and Python."> <!-- summary shown in search results -->
+<meta property="og:title" content="Benedict Bagoyo: AI prototypes, backed by statistics"> <!-- title shown when the link is shared on LinkedIn or WhatsApp -->
+<meta property="og:description" content="I use AI agents to turn ideas into working prototypes, and statistics to check they work. Applied statistics, Universidad Complutense de Madrid."> <!-- description shown with shared links -->
 <meta property="og:type" content="website"> <!-- tells social sites this is a website -->
 <meta name="theme-color" content="#F2F5F3"> <!-- colours the phone's browser bar; the script keeps it in sync with the theme -->
 <link rel="icon" href="assets/clover.svg" type="image/svg+xml"> <!-- clover icon in the browser tab -->
@@ -59,8 +59,8 @@
 
     <section class="hero" id="top" data-aria-en="Introduction" data-aria-es="Presentación"> <!-- opening: statement beside the live demo -->
       <div class="hero-text"> <!-- left column -->
-        <h1 class="statement"><span class="en">I'm Benedict Bagoyo. I build credit and customer models that a bank can explain.</span><span class="es">Soy Benedict Bagoyo. Construyo modelos de crédito y de clientes que un banco puede explicar.</span></h1> <!-- the one big line: who you are and what you do -->
-        <p class="hero-lede"><span class="en">Final-year applied statistics student at Universidad Complutense de Madrid, graduating in 2027. I work in English and Spanish and I'm learning German.</span><span class="es">Estudiante de último curso de Estadística Aplicada en la Universidad Complutense de Madrid; me gradúo en 2027. Trabajo en inglés y español y estoy aprendiendo alemán.</span></p> <!-- supporting line at reading size -->
+        <h1 class="statement"><span class="en">I'm Benedict Bagoyo. I use AI agents to turn ideas into working prototypes, and statistics to check they work.</span><span class="es">Soy Benedict Bagoyo. Uso agentes de IA para convertir ideas en prototipos que funcionan, y la estadística para comprobar que funcionan.</span></h1> <!-- the one big line: who you are and what you do -->
+        <p class="hero-lede"><span class="en">Final-year applied statistics student at Universidad Complutense de Madrid, graduating in 2027, with a year evaluating AI model responses in English and Spanish.</span><span class="es">Estudiante de último curso de Estadística Aplicada en la Universidad Complutense de Madrid, me gradúo en 2027, con un año evaluando respuestas de modelos de IA en inglés y español.</span></p> <!-- supporting line at reading size -->
         <div class="hero-actions"> <!-- buttons -->
           <a class="btn" href="#projects"><span class="en">See projects</span><span class="es">Ver proyectos</span></a> <!-- scrolls to projects -->
           <a class="btn btn-ghost en" href="cv/Benedict_Bagoyo_CV_EN.pdf">Download CV</a> <!-- English CV button -->
@@ -186,8 +186,21 @@
       <div class="explorer"> <!-- tabs plus details -->
         <p class="explorer-hint"><span class="en">Choose a project to see the question, the method and where to read more in detail.</span><span class="es">Elige un proyecto para ver la pregunta, el método y dónde leer más en detalle.</span></p> <!-- how to use the tabs; sits just above the project card -->
         <div class="tablist" role="tablist" data-aria-en="Projects" data-aria-es="Proyectos"> <!-- list of project tabs -->
+          <p class="tab-group" role="presentation"><span class="en">In progress</span><span class="es">En curso</span></p> <!-- group heading -->
+          <button class="tab glass lift" role="tab" id="tab-komyut" aria-controls="panel-komyut" aria-selected="true" tabindex="0" type="button"> <!-- Komyut tab; open by default -->
+            <span class="tab-title"><span class="en">Komyut: live your city</span><span class="es">Komyut: vive tu ciudad</span></span> <!-- short project name -->
+            <span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- status -->
+          </button> <!-- end Komyut tab -->
+          <button class="tab glass lift" role="tab" id="tab-pisa" aria-controls="panel-pisa" aria-selected="false" tabindex="-1" type="button"> <!-- tab 6 -->
+            <span class="tab-title"><span class="en">Student profiles in PISA 2025</span><span class="es">Perfiles de estudiantes en PISA 2025</span></span> <!-- short project name -->
+            <span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- status and year -->
+          </button> <!-- end tab 6 -->
+          <button class="tab glass lift" role="tab" id="tab-stream" aria-controls="panel-stream" aria-selected="false" tabindex="-1" type="button"> <!-- tab 7 -->
+            <span class="tab-title"><span class="en">Streaming subscription revenue</span><span class="es">Ingresos por suscripción en streaming</span></span> <!-- short project name -->
+            <span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- status and year -->
+          </button> <!-- end tab 7 -->
           <p class="tab-group" role="presentation"><span class="en">Completed</span><span class="es">Terminados</span></p> <!-- group heading -->
-          <button class="tab glass lift" role="tab" id="tab-credit-risk" aria-controls="panel-credit-risk" aria-selected="true" tabindex="0" type="button"> <!-- tab 1; open by default -->
+          <button class="tab glass lift" role="tab" id="tab-credit-risk" aria-controls="panel-credit-risk" aria-selected="false" tabindex="-1" type="button"> <!-- tab 1 -->
             <span class="tab-title"><span class="en">Credit risk scoring</span><span class="es">Scoring de riesgo de crédito</span></span> <!-- short project name -->
             <span class="status-line"><span class="status status-done"><span class="en">Complete</span><span class="es">Completado</span></span><span class="year">2026</span></span> <!-- status and year -->
           </button> <!-- end tab 1 -->
@@ -207,19 +220,34 @@
             <span class="tab-title"><span class="en">Google Trends and inflation</span><span class="es">Google Trends e inflación</span></span> <!-- short project name -->
             <span class="status-line"><span class="status status-done"><span class="en">Complete</span><span class="es">Completado</span></span><span class="year">2025</span></span> <!-- status and year -->
           </button> <!-- end tab 5 -->
-          <p class="tab-group" role="presentation"><span class="en">In progress</span><span class="es">En curso</span></p> <!-- group heading -->
-          <button class="tab glass lift" role="tab" id="tab-pisa" aria-controls="panel-pisa" aria-selected="false" tabindex="-1" type="button"> <!-- tab 6 -->
-            <span class="tab-title"><span class="en">Student profiles in PISA 2025</span><span class="es">Perfiles de estudiantes en PISA 2025</span></span> <!-- short project name -->
-            <span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- status and year -->
-          </button> <!-- end tab 6 -->
-          <button class="tab glass lift" role="tab" id="tab-stream" aria-controls="panel-stream" aria-selected="false" tabindex="-1" type="button"> <!-- tab 7 -->
-            <span class="tab-title"><span class="en">Streaming subscription revenue</span><span class="es">Ingresos por suscripción en streaming</span></span> <!-- short project name -->
-            <span class="status-line"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- status and year -->
-          </button> <!-- end tab 7 -->
         </div> <!-- end tab list -->
 
         <div class="cards"> <!-- holds all detail cards; only one shows at a time -->
-          <article class="panel glass" role="tabpanel" id="panel-credit-risk" aria-labelledby="tab-credit-risk" tabindex="0"> <!-- details for project 1 -->
+          <article class="panel glass" role="tabpanel" id="panel-komyut" aria-labelledby="tab-komyut" tabindex="0"> <!-- details for Komyut; open by default -->
+            <figure class="panel-cover"> <!-- cover: the app's four feature layers, until prototype screens are ready -->
+              <ol class="layers"> <!-- feature layers, from essential to optional -->
+                <li><strong><span class="en">Know yourself</span><span class="es">Conocerte</span></strong><span class="layer-text"><span class="en">Places, time in nature, routine versus discovery</span><span class="es">Lugares, tiempo en la naturaleza, rutina frente a descubrimiento</span></span><span class="layer-tier"><span class="en">Free</span><span class="es">Gratis</span></span></li> <!-- layer: Know yourself -->
+                <li><strong><span class="en">Discover</span><span class="es">Descubrir</span></strong><span class="layer-text"><span class="en">Weekly ideas for parks, libraries and free activities</span><span class="es">Ideas semanales de parques, bibliotecas y actividades gratuitas</span></span><span class="layer-tier"><span class="en">Free</span><span class="es">Gratis</span></span></li> <!-- layer: Discover -->
+                <li><strong><span class="en">Go deeper</span><span class="es">Profundizar</span></strong><span class="layer-text"><span class="en">Full history, variety index, optional mood log</span><span class="es">Historial completo, índice de variedad, registro de ánimo opcional</span></span><span class="layer-tier"><span class="en">Full</span><span class="es">Completa</span></span></li> <!-- layer: Go deeper -->
+                <li><strong><span class="en">Share</span><span class="es">Compartir</span></strong><span class="layer-text"><span class="en">Your year in Komyut, without showing your location</span><span class="es">Tu año en Komyut, sin mostrar tu ubicación</span></span><span class="layer-tier"><span class="en">Full</span><span class="es">Completa</span></span></li> <!-- layer: Share -->
+              </ol> <!-- end layers -->
+              <p><span class="en">The app's four feature layers. The first two are free; the full version is a one-time payment.</span><span class="es">Las cuatro capas de funciones de la app. Las dos primeras son gratuitas; la versión completa es un pago único.</span></p> <!-- cover caption -->
+            </figure> <!-- end cover -->
+            <span class="status-line panel-status"><span class="status status-progress"><span class="en">In progress</span><span class="es">En curso</span></span></span> <!-- status, shown on phones where the tabs are hidden -->
+            <h3><span class="en">Komyut: an app to live more of your city</span><span class="es">Komyut: una app para vivir más tu ciudad</span></h3> <!-- full project title -->
+            <dl class="facts"> <!-- what it is, how it's built, why it matters, status -->
+              <dt><span class="en">What it is</span><span class="es">Qué es</span></dt><dd><span class="en">A mobile app that uses your own location data, processed only on your phone, to show how much of your city you actually live, and suggests parks, libraries, free activities and local places you haven't been to.</span><span class="es">Una app móvil que usa tus propios datos de ubicación, procesados solo en tu móvil, para mostrarte cuánto vives realmente tu ciudad, y te sugiere parques, bibliotecas, actividades gratuitas y sitios locales donde no has estado.</span></dd> <!-- what it is -->
+              <dt><span class="en">How it's built</span><span class="es">Cómo se construye</span></dt><dd><span class="en">A prototype built with AI agents (Claude Code and MCP). Android first, with a free version and a one-time paid full version, no subscription.</span><span class="es">Un prototipo construido con agentes de IA (Claude Code y MCP). Primero Android, con una versión gratuita y una versión completa de pago único, sin suscripción.</span></dd> <!-- how it's built -->
+              <dt><span class="en">Why it matters</span><span class="es">Por qué importa</span></dt><dd><span class="en">34.6% of 18–24-year-olds in Spain report unwanted loneliness. Komyut targets one everyday cause, a routine that shrinks to home, class and work, for 18–30-year-olds in Madrid.</span><span class="es">El 34,6 % de los jóvenes de 18 a 24 años en España sufre soledad no deseada. Komyut actúa sobre una causa cotidiana, una rutina que se reduce a casa, clase y trabajo, para jóvenes de 18 a 30 años en Madrid.</span></dd> <!-- why it matters -->
+              <dt><span class="en">Status</span><span class="es">Estado</span></dt><dd><span class="en">Prototype in progress; screens and the build process coming soon.</span><span class="es">Prototipo en curso; las pantallas y el proceso de desarrollo, próximamente.</span></dd> <!-- status -->
+            </dl> <!-- end facts -->
+            <ul class="tags" data-aria-en="Tools" data-aria-es="Herramientas"><li>Claude Code</li><li>MCP</li><li><span class="en">AI agents</span><span class="es">Agentes de IA</span></li><li><span class="en">Privacy by design</span><span class="es">Privacidad desde el diseño</span></li></ul> <!-- tools and approach -->
+            <div class="actions"> <!-- links for this project -->
+              <a class="btn" href="projects/komyut.html" data-preview="komyut.html"><span class="en">See the project page</span><span class="es">Ver la página del proyecto</span></a> <!-- opens the project page; hovering shows a preview -->
+            </div> <!-- end links -->
+          </article> <!-- end Komyut -->
+
+          <article class="panel glass" role="tabpanel" id="panel-credit-risk" aria-labelledby="tab-credit-risk" tabindex="0" hidden> <!-- details for the credit risk project; hidden until chosen -->
             <figure class="panel-cover"> <!-- cover chart -->
               <svg class="chart thumb" viewBox="0 0 640 170" role="img" data-aria-en="Probability of default falls as the risk score rises" data-aria-es="La probabilidad de impago baja al subir la puntuación"> <!-- chart; its spoken name switches with the language -->
               <line class="grid" x1="12" x2="628" y1="158" y2="158"/> <!-- baseline -->
@@ -429,8 +457,8 @@
       <div class="section-head"><h2 id="about-title"><span class="en">About</span><span class="es">Sobre mí</span></h2></div> <!-- section title -->
       <div class="about"> <!-- two-column layout -->
         <div class="about-text"> <!-- left: short story -->
-          <p class="en">Most of my projects sit where statistical models meet where financial regulations are in compliance with EU AI act, Basilea IV,etc. .</p> <!-- focus areas (English) -->
-          <p class="es">La mayoría de mis proyectos están donde los modelos estadísticos se encuentran con la regulación financiera: riesgo de crédito, Basilea IV/CRR3, NIIF 9 y la Ley de IA de la UE.</p> <!-- focus areas (Spanish) -->
+          <p class="en">I build with AI agents. Komyut, the app I'm working on now, is a prototype I made with Claude Code and MCP, and I use statistics to test whether what I build actually works.</p> <!-- focus (English) -->
+          <p class="es">Construyo con agentes de IA. Komyut, la app en la que trabajo ahora, es un prototipo que hice con Claude Code y MCP, y uso la estadística para comprobar si lo que construyo funciona de verdad.</p> <!-- focus (Spanish) -->
           <p class="en">Alongside my degree I've spent a year evaluating AI model responses in English and Spanish, reviewing output against strict criteria and writing up why it passes or fails.</p> <!-- work experience (English) -->
           <p class="es">Además de la carrera, llevo un año evaluando respuestas de modelos de IA en inglés y español, revisando los resultados según criterios estrictos y explicando por qué aprueban o no.</p> <!-- work experience (Spanish) -->
         </div> <!-- end left column -->
@@ -439,15 +467,15 @@
           <div><dt><span class="en">Working</span><span class="es">Trabajo</span></dt><dd><span class="en">Freelance AI bilingual data specialist, DataAnnotation</span><span class="es">Especialista bilingüe en datos para IA (freelance), DataAnnotation</span></dd></div> <!-- current job -->
           <div><dt><span class="en">Volunteering</span><span class="es">Voluntariado</span></dt><dd><span class="en">Community assistant at a Madrid association</span><span class="es">Asistente en una comunidad sin fin de lucro en Madrid</span></dd></div> <!-- volunteer role; name it if you prefer -->
           <div><dt><span class="en">Languages</span><span class="es">Idiomas</span></dt><dd><span class="en">English, Spanish; learning German</span><span class="es">Inglés, español; aprendiendo alemán</span></dd></div> <!-- languages -->
-          <div><dt><span class="en">Looking for</span><span class="es">Busco</span></dt><dd><span class="en">Internships in financial analytics, risk and consulting</span><span class="es">Prácticas en análisis financiero, riesgos y consultoría</span></dd></div> <!-- what you want -->
+          <div><dt><span class="en">Looking for</span><span class="es">Busco</span></dt><dd><span class="en">Internships in AI transformation, AI prototyping and data analytics</span><span class="es">Prácticas en transformación con IA, prototipado con IA y análisis de datos</span></dd></div> <!-- what you want -->
         </dl> <!-- end quick facts -->
       </div> <!-- end about layout -->
     </section> <!-- end about -->
 
     <section class="section contact" id="contact" aria-labelledby="contact-title"> <!-- contact section -->
       <div class="section-head"><h2 id="contact-title"><span class="en">Get in touch</span><span class="es">Contacto</span></h2></div> <!-- section title -->
-      <p class="en">I'm open to internships in data analytics, risk and consulting, in Madrid or remote.</p> <!-- reason to contact you (English) -->
-      <p class="es">Estoy abierto a prácticas en data analytics, riesgos y consultoría, en Madrid o en remoto.</p> <!-- reason to contact you (Spanish) -->
+      <p class="en">I'm open to internships in AI transformation, AI prototyping and data analytics, in Madrid or remote.</p> <!-- reason to contact you (English) -->
+      <p class="es">Estoy abierto a prácticas en transformación con IA, prototipado con IA y análisis de datos, en Madrid o en remoto.</p> <!-- reason to contact you (Spanish) -->
       <a class="email" href="mailto:benedict.bagoyo@yahoo.com">benedict.bagoyo@yahoo.com</a> <!-- replace both with your real email -->
       <div class="contact-row"> <!-- contact buttons -->
         <button class="btn" id="copy-email" type="button" data-email="benedict.bagoyo@yahoo.com"></button> <!-- copies the address; label set by the script; replace data-email too -->
