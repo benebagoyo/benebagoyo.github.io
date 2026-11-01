@@ -218,7 +218,7 @@ button, a { -webkit-tap-highlight-color: transparent; } /* no grey flash when ta
 
 /* ---------- Front page: hero ---------- */
 .hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 48px; align-items: center; padding: 80px 0 88px; } /* statement on the left, live demo on the right */
-.statement { font-size: clamp(2.25rem, 4vw, 3.25rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; color: var(--ink); margin: 0 0 24px; max-width: 19ch; } /* the one large line, in a single colour */
+.statement { font-size: clamp(2.25rem, 4vw, 3.25rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; color: var(--ink); margin: 0 0 24px; max-width: 22ch; } /* the one large line, in a single colour */
 .hero-lede { font-size: var(--fs-lg); line-height: 1.5; color: var(--muted); margin: 0 0 32px; max-width: 40ch; } /* supporting line at reading size */
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; } /* row of hero buttons */
 .alt-lang { font-size: var(--fs-sm); color: var(--muted); margin-left: 4px; } /* link to the other-language CV */
@@ -251,6 +251,12 @@ button, a { -webkit-tap-highlight-color: transparent; } /* no grey flash when ta
 .panel-cover { margin: 0 0 24px; padding: 0 0 18px; border-bottom: 1px solid var(--line); } /* cover chart sits directly on the card, separated by a hairline instead of a second box */
 .panel-cover img { display: block; width: 100%; border-radius: 10px; } /* cover image, for projects without a drawn chart */
 .panel-cover p { margin: 8px 2px 0; font-size: var(--fs-xs); color: var(--muted); } /* cover caption */
+.layers { list-style: none; counter-reset: layer; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding: 0; margin: 0; } /* four feature layers side by side */
+.layers li { counter-increment: layer; display: flex; flex-direction: column; gap: 6px; padding: 14px 14px 12px; border-radius: 14px; background: color-mix(in srgb, var(--teal) 7%, transparent); } /* one layer */
+.layers strong { font-size: var(--fs-sm); line-height: 1.25; } /* layer name */
+.layers strong::before { content: counter(layer) ". "; color: var(--teal); } /* layer number, since they build on each other */
+.layer-text { font-size: var(--fs-xs); color: var(--muted); line-height: 1.4; } /* what the layer does */
+.layer-tier { margin-top: auto; font-size: var(--fs-xs); font-weight: 600; color: var(--teal); } /* free or full version */
 .panel-status { display: none; } /* status line inside a card; only needed on phones, where the tabs are hidden */
 
 /* ---------- Project pages: cover and method strip ---------- */
@@ -380,6 +386,7 @@ footer { border-top: 1px solid var(--line); padding: 40px 0 56px; } /* bottom of
 .fig-ph { display: grid; place-items: center; aspect-ratio: 16 / 9; border: 1.5px dashed var(--line); border-radius: calc(var(--radius-card) - 12px); color: var(--muted); font-size: var(--fs-sm); text-align: center; padding: 16px; } /* placeholder until you add an image */
 .figure figcaption { padding: 12px 6px 2px; font-size: var(--fs-xs); color: var(--muted); } /* caption under the figure */
 .next { padding: 0 0 96px; } /* "Next project" area */
+.soon { margin: 8px 0 72px; padding: 32px 36px; } /* "coming soon" box on a project page that has no write-up yet */
 .next > p { margin: 0 0 12px; font-size: var(--fs-xs); font-weight: 600; color: var(--muted); } /* small label */
 .next-card { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 28px; border-radius: var(--radius-tab); text-decoration: none; } /* link to the next project, as a small glass card */
 .next-card strong { font-size: var(--fs-lg); letter-spacing: -0.015em; } /* next project title */
@@ -423,6 +430,7 @@ footer { border-top: 1px solid var(--line); padding: 40px 0 56px; } /* bottom of
   .section { padding: 64px 0; } /* less vertical space */
   .panel { padding: 24px; } /* less padding inside details */
   .results-grid { grid-template-columns: minmax(0, 1fr); } /* one card per row */
+  .layers { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* feature layers two by two on phones */
   .chart.mini .axis { font-size: 18px; } /* chart text is scaled down with the chart on phones, so draw it larger to land near 11px */
   .chart.mini .label { font-size: 19px; } /* values on the small charts, readable on phones */
   .chart.mini .cell-n { font-size: 26px; } /* counts in the classification grid */
